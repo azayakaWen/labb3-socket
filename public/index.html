@@ -8,23 +8,18 @@
     <title>Document</title>
   </head>
   <body>
-    <div id="container">
-      <header>
-        <h1>Kasta tärning med vänner!</h1>
-      </header>
+    <header>
+      <h1>Kasta tärning med vänner!</h1>
+    </header>
 
-      <main id="content">
-        <span class="dice dice-2" id="first-die"></span>
+    <main>
+      <input id="roll-dice" type="button" value="Kasta tärningen!" />
 
-        <input id="roll-dice" type="button" value="Kasta tärningen!" />
-      </main>
-
-      <div id="total">
-        <h1>Du fick:</h1>
-        <h2 id="dice_total"></h2>
-      </div>
-    </div>
+      <h2>Du fick:</h2>
+      <h3 id="dice-value"></h3>
+    </main>
 
     <script src="index.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
   </body>
 </html>

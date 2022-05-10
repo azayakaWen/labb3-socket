@@ -1,9 +1,10 @@
-document.getElementById("roll-dice").onclick = diceRoll;
+const socket = io();
 
-function diceRoll() {
-  let randomValue = Math.floor(Math.random() * 6 + 1);
+const rollDise = document.getElementById("roll-dice");
+const diceValue = document.getElementById("dice-value");
 
-  document.getElementById("first-die").className = "dice-" + randomValue;
+rollDise.addEventListener("click", () => {
+  let random = Math.floor(Math.random() * 6 + 1);
 
-  document.getElementById("dice_total").innerHTML = randomValue;
-}
+  diceValue.innerHTML = random;
+});
