@@ -1,0 +1,25 @@
+{
+  "name": "labb3",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/azayakaWen/labb3-socket.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/azayakaWen/labb3-socket/issues"
+  },
+  "homepage": "https://github.com/azayakaWen/labb3-socket#readme",
+  "dependencies": {
+    "express": "^4.18.1",
+    "mongodb": "^4.5.0",
+    "socket.io": "^4.5.0"
+  }
+}
