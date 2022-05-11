@@ -8,15 +8,14 @@ const port = 3000;
 app.use(express.static("public"));
 
 io.on("connection", (socket) => {
-  console.log(`A client with id ${socket.id} connected to play!`);
+  console.log(`Client ${socket.id} is ready to play!`);
 
-  socket.on("scoreList", (msg) => {
-    console.log("Score: " + msg.user + " " + msg.score);
-    io.emit("newScoreList", msg.user + " : " + msg.score);
+  socket.on("rollDice", (value) => {
+    io.emit("newScoreList", value.name + ":" + value.diceValue);
   });
 
   socket.on("disconnect", () => {
-    console.log(`Client ${socket.id} disconnected!`);
+    console.log(`Client ${socket.id} is a bad loser!`);
   });
 });
 

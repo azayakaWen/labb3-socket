@@ -1,19 +1,13 @@
-const rollDise = document.getElementById("roll-dice");
-const diceValue = document.getElementById("dice-value");
-
-rollDise.addEventListener("click", () => {
-  let random = Math.floor(Math.random() * 6 + 1);
-
-  diceValue.innerHTML = random;
-});
-
 const socket = io();
+
+const rollDice = document.getElementById("roll-dice");
+const diceValue = document.getElementById("dice-value");
+const formDice = document.getElementById("form-dice");
+const scores = document.getElementById("scores");
 
 const formUser = document.querySelector("#formUser");
 const inputUser = document.querySelector("#inputUser");
 const userContianer = document.querySelector("#userContainer");
-const formDice = document.getElementById("form-dice");
-const scores = document.getElementById("scores");
 
 let myUser;
 
@@ -24,17 +18,22 @@ formUser.addEventListener("submit", function (e) {
   document.getElementById("user").style.display = "none";
 });
 
-formDice.addEventListener("submit", function (e) {
+formDice.addEventListener("click", (e) => {
   e.preventDefault();
-  console.log();
-  if (rollDise.value) {
-    socket.emit("scoreList", { user: myUser, score: diceValue.value });
-    diceValue.value = "";
+  if (rollDice.value) {
+    socket.emit("scoreList", { user: myUser, dice: rollDice.value });
+    rollDice.value = "";
   }
 });
 
-socket.on("newScoreList", function (msg) {
+socket.on("newScoreList", (score) => {
   let item = document.createElement("li");
-  item.textContent = msg;
+  item.textContent = score;
   scores.appendChild(item);
+});
+
+rollDice.addEventListener("click", () => {
+  let random = Math.floor(Math.random() * 6 + 1);
+  socket.emit("rollDice", { name: myUser, diceValue: random });
+  diceValue.innerHTML = random;
 });
