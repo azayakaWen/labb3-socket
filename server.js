@@ -8,10 +8,11 @@ const port = 3000;
 app.use(express.static("public"));
 
 io.on("connection", (socket) => {
-  console.log(`A client with id ${socket.id} connected to the game!`);
+  console.log(`A client with id ${socket.id} connected to play!`);
 
-  socket.on("diceNumber", (msg) => {
-    io.emit("newDiceNumber", msg);
+  socket.on("scoreList", (msg) => {
+    console.log("Score: " + msg.user + " " + msg.score);
+    io.emit("newScoreList", msg.user + " : " + msg.score);
   });
 
   socket.on("disconnect", () => {

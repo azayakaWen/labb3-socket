@@ -12,14 +12,30 @@
       <h1>Kasta tärning med vänner!</h1>
     </header>
 
-    <main>
-      <input id="roll-dice" type="button" value="Kasta tärningen!" />
+    <main id="main">
+      <!--Fält för namen-->
+      <div id="userContainer"></div>
+      <div id="user">
+        <h2>Skriv ditt namn för att börja spela!</h2>
+        <form id="formUser">
+          <input type="text" id="inputUser" />
+          <button>Börja!</button>
+        </form>
+      </div>
 
-      <h2>Du fick:</h2>
-      <h3 id="dice-value"></h3>
+      <div id="dice">
+        <form id="form-dice">
+          <input id="roll-dice" type="button" value="Kasta tärningen!" />
+          <h2>Du fick:</h2>
+          <h3 id="dice-value"></h3>
+        </form>
+      </div>
+
+      <h2>Lista med värden:</h2>
+      <ul id="scores"></ul>
     </main>
 
-    <script src="index.js"></script>
     <script src="/socket.io/socket.io.js"></script>
+    <script src="index.js"></script>
   </body>
 </html>
