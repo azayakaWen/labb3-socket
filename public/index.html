@@ -1,42 +1,50 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="index.css" />
-    <title>Document</title>
+    <title>Socket.IO chat</title>
+    <link rel="stylesheet" type="text/css" href="index.css" />
   </head>
   <body>
     <header>
       <h1>Kasta tärning med vänner!</h1>
     </header>
 
-    <main id="main">
-      <!--Fält för namen-->
-      <div id="userContainer"></div>
-      <div id="user">
-        <h2>Skriv ditt namn för att börja spela!</h2>
-        <form id="formUser">
-          <input type="text" id="inputUser" />
-          <button>Börja!</button>
-        </form>
-      </div>
+    <!--Skriv in namn-->
+    <div id="userContainer"></div>
+    <div id="user">
+      <h2>Skriv ditt namn för att börja!</h2>
+      <form id="formUser">
+        <input type="text" id="inputUser" /><button>Börja</button>
+      </form>
+    </div>
 
-      <!--Kasta täning-->
-      <div id="dice">
-        <form id="form-dice" action="">
-          <input id="roll-dice" type="button" value="Kasta tärningen!" />
-        </form>
+    <!--Kasta täning-->
+    <div id="dice">
+      <form id="form-dice" action="">
+        <button id="roll-dice">Kasta tärningen!</button>
+      </form>
 
-        <h2>Du fick:</h2>
-        <h3 id="dice-value"></h3>
-      </div>
+      <!--Värdet för kastet-->
+      <h2>Du fick:</h2>
+      <h3 id="dice-value"></h3>
 
       <!--Lista med kast-->
       <h2>Lista med värden:</h2>
       <ul id="scores"></ul>
-    </main>
+    </div>
+
+    <!--Chat-->
+    <div id="message">
+      <form id="formMessage">
+        <h3>Skriv ditt meddelande:</h3>
+        <textarea id="inputMessage" cols="30" rows="10"></textarea>
+        <button>Skicka</button>
+      </form>
+    </div>
+    <div id="chat">
+      <h2>Chat meddelanden</h2>
+      <ul id="messages"></ul>
+    </div>
 
     <script src="/socket.io/socket.io.js"></script>
     <script src="index.js"></script>

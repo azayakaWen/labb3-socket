@@ -8,14 +8,26 @@ const port = 3000;
 app.use(express.static("public"));
 
 io.on("connection", (socket) => {
-  console.log(`Client ${socket.id} is ready to play!`);
+  console.log(`A client with id ${socket.id} connected to the chat!`);
+
+  socket.on("chatMessage", (msg) => {
+    console.log("Meddelande: " + msg.user + " " + msg.message);
+    io.emit("newChatMessage", msg.user + " : " + msg.message);
+  });
 
   socket.on("rollDice", (value) => {
-    io.emit("newScoreList", value.name + ":" + value.diceValue);
+    io.emit(
+      "newScoreList",
+      value.name +
+        ": Senaste kastet: " +
+        value.diceValue +
+        ", Totalen: " +
+        value.diceTotal
+    );
   });
 
   socket.on("disconnect", () => {
-    console.log(`Client ${socket.id} is a bad loser!`);
+    console.log(`Client ${socket.id} disconnected!`);
   });
 });
 
