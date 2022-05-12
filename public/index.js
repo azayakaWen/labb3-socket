@@ -25,6 +25,7 @@ formUser.addEventListener("submit", function (e) {
   document.getElementById("message").style.display = "block";
   document.getElementById("chat").style.display = "block";
   document.getElementById("dice").style.display = "block";
+  document.getElementById("instructions").style.display = "block";
 });
 
 //Info för chat
@@ -70,4 +71,12 @@ rollDice.addEventListener("click", () => {
     diceValue: random,
     diceTotal: total,
   });
+
+  /*if (total > 50) {
+    Swal.fire(`${myUser} vann!
+    GRATTIS!`);
+    setTimeout(function () {
+      location.reload();
+    }, 3000);
+  }*/
 });

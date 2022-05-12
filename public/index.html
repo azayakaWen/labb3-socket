@@ -14,8 +14,18 @@
     <div id="user">
       <h2>Skriv ditt namn för att börja!</h2>
       <form id="formUser">
-        <input type="text" id="inputUser" /><button>Börja</button>
+        <input type="text" id="inputUser" /><button id="user-button">Börja</button>
       </form>
+    </div>
+
+    <div id="instructions">
+      <h3>Instruktioner</h3>
+      <p>
+        Spelarna avgör själva vem som kastar tärningen först, man får gärna använda chatten till detta.
+        Spelarna turas om med att kasta tärningen efter det.
+        Spelet räknar ihop värdet av alla ens kast/poäng.
+        Spelaren som först får 23 poäng eller mer vinner!
+      </p>
     </div>
 
     <!--Kasta täning-->
@@ -25,28 +35,36 @@
       </form>
 
       <!--Värdet för kastet-->
-      <h2>Du fick:</h2>
-      <h3 id="dice-value"></h3>
+      <div id="value">
+        <h2>Du fick:</h2>
+        <h3 id="dice-value"></h3>
+      </div>
 
       <!--Lista med kast-->
-      <h2>Lista med värden:</h2>
-      <ul id="scores"></ul>
-    </div>
+      <div id="value-container">
+        <div>
+          <h2>Lista med värden:</h2>
+          <ul id="scores"></ul>
+        </div>
 
-    <!--Chat-->
-    <div id="message">
-      <form id="formMessage">
-        <h3>Skriv ditt meddelande:</h3>
-        <textarea id="inputMessage" cols="30" rows="10"></textarea>
-        <button>Skicka</button>
-      </form>
-    </div>
-    <div id="chat">
-      <h2>Chat meddelanden</h2>
-      <ul id="messages"></ul>
+      <!--Chat-->
+      <div id="message">
+        <form id="formMessage">
+          <h3>Skriv ditt meddelande:</h3>
+          <textarea id="inputMessage" cols="30" rows="10"></textarea>
+          <div>
+          <button id="send-btn">Skicka</button>
+        </div>
+        </form>
+      </div>
+      <div id="chat">
+        <h3>Chat:</h3>
+        <ul id="messages"></ul>
+      </div>
     </div>
 
     <script src="/socket.io/socket.io.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="index.js"></script>
   </body>
 </html>

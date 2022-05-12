@@ -1,11 +1,136 @@
+body {
+  background: url(img/dice.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
 #message{
 	display: none;
 }
 
 #dice {
   display: none;
+  text-align: center;
 }
 
 #chat {
   display: none;
+}
+
+h1 {
+  text-align: center;
+  font-size: 80px;
+  text-shadow: 2px 2px 8px rgb(236, 30, 30);
+  color: whitesmoke;
+}
+
+h2 {
+  text-shadow: 2px 2px 8px rgb(236, 30, 30);
+  color: whitesmoke;
+  font-size: 30px;
+}
+
+h3 {
+  font-size: 30px;
+  color: whitesmoke;
+  text-shadow: 2px 2px 8px rgb(236, 30, 30);
+}
+
+p {
+  font-size: 20px;
+}
+
+#user {
+  border: solid whitesmoke 2px;
+  box-shadow: 2px 2px 8px rgb(236, 30, 30);
+  border-radius: 5px;
+  text-align: center;
+  margin: 5% 30% 5% 30%;
+  padding: 3% 0 5% 0;
+}
+
+#user-button {
+  border: solid whitesmoke 2px;
+  border-radius: 5px;
+  box-shadow: 2px 2px 8px rgb(236, 30, 30);
+}
+
+#user-button:hover {
+  border: solid rgb(236, 30, 30) 2px;
+}
+
+input {
+  border: solid whitesmoke 2px;
+  border-radius: 5px;
+  box-shadow: 2px 2px 8px rgb(236, 30, 30);
+}
+
+#userContainer {
+  text-align: center;
+}
+
+#inputUser {
+  margin-right: 5px;
+}
+
+#instructions {
+  border: solid whitesmoke 2px;
+  box-shadow: 2px 2px 8px rgb(236, 30, 30);
+  border-radius: 5px;
+  text-align: center;
+  display: none;
+  margin: 5% 20% 5% 20%;
+  color: whitesmoke;
+  text-shadow: 2px 2px 8px rgb(236, 30, 30);
+}
+
+#value {
+  text-align: center;
+  margin: 0 40% 0 40%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+#roll-dice {
+  margin-bottom: 10px;
+  width: 200px;
+  height: 100px;
+  font-size: 20px;
+  border-radius: 10px;
+  box-shadow: 2px 2px 8px rgb(236, 30, 30);
+  border: solid whitesmoke 2px;
+}
+
+#roll-dice:hover {
+  border: solid rgb(236, 30, 30) 2px;;
+}
+
+#value-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+}
+
+#send-btn {
+  border: solid whitesmoke 2px;
+  border-radius: 5px;
+  box-shadow: 2px 2px 8px rgb(236, 30, 30);
+}
+
+#send-btn:hover {
+  border: solid rgb(236, 30, 30) 2px;
+}
+
+textarea {
+  border-radius: 10px;
+  box-shadow: 2px 2px 8px rgb(236, 30, 30);
+  border: solid whitesmoke 2px;
+}
+
+ul {
+  list-style-type: none;
+  color: whitesmoke;
+  text-shadow: 2px 2px 8px rgb(236, 30, 30);
 }
