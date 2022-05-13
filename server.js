@@ -80,14 +80,28 @@ io.on("connection", (socket) => {
 
   //Tärningen
   socket.on("rollDice", (value) => {
-    io.emit(
-      "newScoreList",
-      value.name +
-        ": Senaste kastet: " +
-        value.diceValue +
-        ", Totalen: " +
-        value.diceTotal
-    );
+    if (value.diceTotal >= 15) {
+      io.emit(
+        "newScoreList",
+        value.name +
+          ": Senaste kastet: " +
+          value.diceValue +
+          ", Totalen: " +
+          value.diceTotal +
+          ", " +
+          value.name +
+          " har vunnit!"
+      );
+    } else {
+      io.emit(
+        "newScoreList",
+        value.name +
+          ": Senaste kastet: " +
+          value.diceValue +
+          ", Totalen: " +
+          value.diceTotal
+      );
+    }
 
     //Tärning för MongoDB
     dice.insertOne(

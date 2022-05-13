@@ -72,3 +72,11 @@ rollDice.addEventListener("click", () => {
     diceTotal: total,
   });
 });
+
+/*if (total > 50) {
+    Swal.fire(`${myUser} vann!
+    GRATTIS!`);
+    setTimeout(function () {
+      location.reload();
+    }, 3000);
+  }*/
